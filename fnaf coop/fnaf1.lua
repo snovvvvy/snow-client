@@ -110,24 +110,4 @@ local ESP = Main:Toggle({
         AnimatronicESP(state)
     end
 })
-espfillcolor = Main:Colorpicker({
-    Title = "Fill Color",
-    Desc = "Colorpicker Description",
-    Default = Color3.fromRGB(255, 0, 0),
-    Transparency = 0,
-    Locked = false,
-    Callback = function(color) 
-        print("Background color: " .. tostring(color))
-    end
-})
-espoutlinecolor = Main:Colorpicker({
-    Title = "Outline Color",
-    Desc = "Colorpicker Description",
-    Default = Color3.fromRGB(255, 0, 0),
-    Transparency = 0,
-    Locked = false,
-    Callback = function(color) 
-        print("Background color: " .. tostring(color))
-    end
-})
 Window:SelectTab(1)
