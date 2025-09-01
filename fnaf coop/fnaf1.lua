@@ -102,7 +102,7 @@ end)
 -- MAIN --
 local MainSection = Main:Section({ 
     Title = "Main",
-    TextXAlignment = "Middle",
+    TextXAlignment = "Center",
     TextSize = 24, -- Default Size
 })
 
