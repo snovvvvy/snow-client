@@ -14,7 +14,8 @@ RunService.RenderStepped:Connect(function()
     fps = 1 / (now - lastTime)
     lastTime = now
 end)
-local function AnimatronicESP(boolean) 
+local instance
+local function AnimatronicESP(boolean, fillcolor, outlinecolor) 
     if boolean then 
         for _, v in pairs(animatronicsfolder:GetChildren()) do 
             if v:IsA("Folder") then 
@@ -109,5 +110,24 @@ local ESP = Main:Toggle({
         AnimatronicESP(state)
     end
 })
-
+espfillcolor = Main:Colorpicker({
+    Title = "Fill Color",
+    Desc = "Colorpicker Description",
+    Default = Color3.fromRGB(255, 0, 0),
+    Transparency = 0,
+    Locked = false,
+    Callback = function(color) 
+        print("Background color: " .. tostring(color))
+    end
+})
+espoutlinecolor = Main:Colorpicker({
+    Title = "Outline Color",
+    Desc = "Colorpicker Description",
+    Default = Color3.fromRGB(255, 0, 0),
+    Transparency = 0,
+    Locked = false,
+    Callback = function(color) 
+        print("Background color: " .. tostring(color))
+    end
+})
 Window:SelectTab(1)
