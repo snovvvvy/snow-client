@@ -100,6 +100,17 @@ task.spawn(function()
 end)
 
 -- MAIN --
+local MainSection = Main:Section({ 
+    Title = "Main",
+    TextXAlignment = "Middle",
+    TextSize = 24, -- Default Size
+})
+
+local ESPSection = Main:Section({ 
+    Title = "ESP",
+    TextXAlignment = "Left",
+    TextSize = 17, -- Default Size
+})
 local ESP = Main:Toggle({
     Title = "Animatronic ESP",
     Desc = "useful for seeing animatronics through walls",
