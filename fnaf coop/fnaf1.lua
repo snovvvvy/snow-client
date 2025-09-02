@@ -1,3 +1,4 @@
+repeat task.wait() until game:IsLoaded()
 local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
 
 local RunService = game:GetService("RunService")
@@ -8,6 +9,7 @@ local fps = 0
 local lastTime = tick()
 
 local lplr = game:GetService("Players").LocalPlayer
+local char = lplr.Character or lplr.CharacterAdded:Wait()
 
 local lightingtech = game:GetService("Lighting").Technology.Value
 local animatronicsfolder = workspace.Animatronics
@@ -129,7 +131,7 @@ end)
 local MainSection = Main:Section({ 
     Title = "Main",
     TextXAlignment = "Left",
-    TextSize = 24, -- Default Size
+    TextSize = 24,
 })
 
 local ESPSection = Main:Section({ 
@@ -166,6 +168,32 @@ local fpsboost = Main:Toggle({
     end
 })
 
+-- LOCALPLAYER --
+local speedslider
 
+local Speed = Main:Toggle({
+    Title = "Speed",
+    Desc = "makes you go fast",
+    Icon = "chevrons-up",
+    Type = "Toggle",
+    Default = false,
+    Callback = function(state) 
+        fpsboost(state)
+    end
+})
+
+speedslider = Tab:Slider({
+    Title = "Slider",
+    Step = .5,
+    Desc = "Default Value: 12",
+    Value = {
+        Min = 12,
+        Max = 100,
+        Default = 12,
+    },
+    Callback = function(value)
+        char:FindFirstChildWhichIsA("Humanoid").WalkSpeed = value
+    end
+})
 
 Window:SelectTab(1)
