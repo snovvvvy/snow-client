@@ -7,6 +7,8 @@ local ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
 local fps = 0
 local lastTime = tick()
 
+local lplr = game:GetService("Players").LocalPlayer
+
 local lightingtech = game:GetService("Lighting").Technology.Value
 local animatronicsfolder = workspace.Animatronics
 
@@ -86,6 +88,15 @@ local Main = Window:Tab({
 })
 
 -- HOME --
+
+local welcome = Home:Paragraph({
+    Title = "Welcome, "..lplr.DisplayName,
+    Color = "White",
+    Image = "info",
+    ImageSize = 30,
+    Locked = false,
+})
+
 local Keybind = Home:Keybind({
     Title = "Keybind",
     Desc = "Keybind to open ui",
@@ -131,7 +142,6 @@ local ESP = Main:Toggle({
         AnimatronicESP(state)
     end
 })
-Window:SelectTab(1)
 
 local FPSSection = Main:Section({ 
     Title = "Performance",
@@ -149,3 +159,7 @@ local fpsboost = Main:Toggle({
         fpsboost(state)
     end
 })
+
+
+
+Window:SelectTab(1)
