@@ -40,7 +40,7 @@ end
 
 local function fpsboost(boolean) 
     if boolean then 
-        game:GetService("Lighting").Technology = Enum.Technology.Voxel
+        game:GetService("Lighting").Technology = Enum.Technology.Compatibility
     else
         game:GetService("Lighting").Technology = lightingtech
     end
