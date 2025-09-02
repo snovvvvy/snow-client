@@ -7,6 +7,7 @@ local ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
 local fps = 0
 local lastTime = tick()
 
+local lightingtech = game:GetService("Lighting").Technology
 local animatronicsfolder = workspace.Animatronics
 
 RunService.RenderStepped:Connect(function()
@@ -14,7 +15,7 @@ RunService.RenderStepped:Connect(function()
     fps = 1 / (now - lastTime)
     lastTime = now
 end)
-local instance
+
 local function AnimatronicESP(boolean, fillcolor, outlinecolor) 
     if boolean then 
         for _, v in pairs(animatronicsfolder:GetChildren()) do 
@@ -34,6 +35,14 @@ local function AnimatronicESP(boolean, fillcolor, outlinecolor)
                 end
             end 
         end
+    end
+end
+
+local function fpsboost(boolean) 
+    if boolean then 
+        game:GetService("Lighting").Technology = Enum.LightingTechnology.Voxel
+    else
+        game:GetService("Lighting").Technology = lightingtech
     end
 end
 
@@ -102,7 +111,7 @@ end)
 -- MAIN --
 local MainSection = Main:Section({ 
     Title = "Main",
-    TextXAlignment = "Center",
+    TextXAlignment = "Left",
     TextSize = 24, -- Default Size
 })
 
@@ -111,6 +120,7 @@ local ESPSection = Main:Section({
     TextXAlignment = "Left",
     TextSize = 17, -- Default Size
 })
+
 local ESP = Main:Toggle({
     Title = "Animatronic ESP",
     Desc = "useful for seeing animatronics through walls",
@@ -122,3 +132,20 @@ local ESP = Main:Toggle({
     end
 })
 Window:SelectTab(1)
+
+local FPSSection = Main:Section({ 
+    Title = "Performance",
+    TextXAlignment = "Left",
+    TextSize = 17, -- Default Size
+})
+
+local fpsboost = Main:Toggle({
+    Title = "Boost FPS",
+    Desc = "useful for low end devices",
+    Icon = "gauge",
+    Type = "Toggle",
+    Default = false,
+    Callback = function(state) 
+        
+    end
+})
