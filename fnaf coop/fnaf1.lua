@@ -146,6 +146,6 @@ local fpsboost = Main:Toggle({
     Type = "Toggle",
     Default = false,
     Callback = function(state) 
-        
+        fpsboost(state)
     end
 })
