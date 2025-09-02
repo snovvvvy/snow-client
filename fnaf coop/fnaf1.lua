@@ -87,6 +87,12 @@ local Main = Window:Tab({
     Locked = false,
 })
 
+local Player = Window:Tab({
+    Title = "LocalPlayer",
+    Icon = "person-standing",
+    Locked = false,
+})
+
 -- HOME --
 
 local welcome = Home:Paragraph({
