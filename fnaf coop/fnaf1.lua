@@ -7,7 +7,7 @@ local ping = Stats.Network.ServerStatsItem["Data Ping"]:GetValue()
 local fps = 0
 local lastTime = tick()
 
-local lightingtech = game:GetService("Lighting").Technology
+local lightingtech = game:GetService("Lighting").Technology.Value
 local animatronicsfolder = workspace.Animatronics
 
 RunService.RenderStepped:Connect(function()
