@@ -171,7 +171,7 @@ local fpsboost = Main:Toggle({
 -- LOCALPLAYER --
 local speedslider
 
-local Speed = Main:Toggle({
+local Speed = Player:Toggle({
     Title = "Speed",
     Desc = "makes you go fast",
     Icon = "chevrons-up",
@@ -182,7 +182,7 @@ local Speed = Main:Toggle({
     end
 })
 
-speedslider = Tab:Slider({
+speedslider = Player:Slider({
     Title = "Slider",
     Step = .5,
     Desc = "Default Value: 12",
