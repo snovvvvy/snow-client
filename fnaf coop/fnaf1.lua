@@ -90,7 +90,7 @@ local Main = Window:Tab({
 -- HOME --
 
 local welcome = Home:Paragraph({
-    Title = "Welcome, "..lplr.DisplayName,
+    Title = "Welcome, "..lplr.DisplayName..".",
     Color = "White",
     Image = "info",
     ImageSize = 30,
