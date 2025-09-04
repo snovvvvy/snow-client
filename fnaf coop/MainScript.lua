@@ -9,3 +9,6 @@ if (game.PlaceId == placeids.lobby or game.PlaceId == placeids.lobby2) then
 elseif (game.PlaceId == placeids.fnaf1) then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/snovvvvy/snow-client/main/fnaf%20coop/fnaf1.lua"))()
 end
+if queue_on_teleport then queue_on_teleport(
+    'loadstring(game:HttpGet("https://raw.githubusercontent.com/snovvvvy/snow-client/refs/heads/main/fnaf%20coop/MainScript.lua"))()'
+) end

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/snovvvvy/snow-client/refs/heads/main/fnaf%20coop/MainScript.lua"))()
