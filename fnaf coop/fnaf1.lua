@@ -23,21 +23,25 @@ end)
 local function AnimatronicESP(boolean, fillcolor, outlinecolor) 
     if boolean then 
         for _, v in pairs(animatronicsfolder:GetChildren()) do 
-            if v:IsA("Folder") then 
-                if (v.Name ~= "Blackout" and v.Name ~= "GoldenFreddy") then 
-                    Instance.new("Highlight", v:WaitForChild(v.Name.."NPC"))
+            task.spawn(function() 
+                if v:IsA("Folder") then 
+                    if (v.Name ~= "Blackout" and v.Name ~= "GoldenFreddy") then 
+                        Instance.new("Highlight", v:WaitForChild(v.Name.."NPC"))
+                    end
                 end
-            end 
+            end)
         end
     else
         for _, v in pairs(animatronicsfolder:GetChildren()) do 
-            if v:IsA("Folder") then 
-                if (v.Name ~= "Blackout" and v.Name ~= "GoldenFreddy") then 
-                    if v:WaitForChild(v.Name.."NPC"):FindFirstChildWhichIsA("Highlight") then 
-                        v:WaitForChild(v.Name.."NPC"):FindFirstChildWhichIsA("Highlight"):Destroy()
+            task.spawn(function() 
+                if v:IsA("Folder") then 
+                    if (v.Name ~= "Blackout" and v.Name ~= "GoldenFreddy") then 
+                        if v:WaitForChild(v.Name.."NPC"):FindFirstChildWhichIsA("Highlight") then 
+                            v:WaitForChild(v.Name.."NPC"):FindFirstChildWhichIsA("Highlight"):Destroy()
+                        end
                     end
                 end
-            end 
+            end)
         end
     end
 end
