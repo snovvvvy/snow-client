@@ -178,7 +178,11 @@ local Speed = Player:Toggle({
     Type = "Toggle",
     Default = false,
     Callback = function(state) 
-        char:FindFirstChildWhichIsA("Humanoid").WalkSpeed = speed
+        if state then 
+            char:FindFirstChildWhichIsA("Humanoid").WalkSpeed = speed
+        else
+            char:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 12
+        end
     end
 })
 
