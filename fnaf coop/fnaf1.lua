@@ -43,11 +43,13 @@ local function AnimatronicESP(boolean, fillcolor, outlinecolor)
 end
 
 local function fpsboost(boolean) 
+    print(2)
     if boolean then 
         game:GetService("Lighting").Technology = Enum.Technology.Compatibility
     else
         game:GetService("Lighting").Technology = lightingtech
     end
+    print(3)
 end
 
 local Window = WindUI:CreateWindow({
@@ -164,6 +166,7 @@ local fpsboost = Main:Toggle({
     Type = "Toggle",
     Default = false,
     Callback = function(state) 
+        print(1)
         fpsboost(state)
     end
 })
